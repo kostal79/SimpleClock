@@ -47,6 +47,7 @@ function tik() {
     hourehand.setAttribute('y2',`${hourCoord[hours][1]}`);
     minutehand.setAttribute('x2', `${minCoord[minutes][0]}`);
     minutehand.setAttribute('y2', `${minCoord[minutes][1]}`);
+    hourehand.setAttribute('transform', `rotate(${minutes / 60 * 30}, 50, 50)`)
 }
 
 tik();
