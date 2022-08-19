@@ -1,15 +1,12 @@
 
 function tik() {
     let date = new Date();
-    let hours = date.getHours();
+    let hours = date.getHours() % 12 ;
     let minutes = date.getMinutes();
     let hourehand = document.querySelector('.hourehand');
     let minutehand = document.querySelector('.minutehand');
-    hourehand.setAttribute('x2',`${hourCoord[hours][0]}`);
-    hourehand.setAttribute('y2',`${hourCoord[hours][1]}`);
-    minutehand.setAttribute('x2', `${minCoord[minutes][0]}`);
-    minutehand.setAttribute('y2', `${minCoord[minutes][1]}`);
-    hourehand.setAttribute('transform', `rotate(${minutes / 60 * 30}, 50, 50)`)
+    minutehand.setAttribute('transform', `rotate(${minutes * 6}, 50, 50)`)
+    hourehand.setAttribute('transform', `rotate(${(hours * 60 + minutes) * 0.5}, 50, 50)`)
 }
 
 tik();
